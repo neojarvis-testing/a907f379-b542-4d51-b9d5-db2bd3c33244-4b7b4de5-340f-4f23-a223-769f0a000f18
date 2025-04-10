@@ -32,7 +32,7 @@ public class ProductsPageActions03 {
         try {
             helper.performClick(ProductsPageLocators03.productpageClickFirstCompanyAfterSearch);
             LogHelper.info("Clicked on The First Product After Search");
-            helper.switchWindow();
+            helper.switchToNewWindow();
             LogHelper.info("Window Handled From Parent To Child");
         } catch (Exception e) {
             e.printStackTrace();
@@ -74,7 +74,7 @@ public class ProductsPageActions03 {
             LogHelper.info("Hovered on ContactSupplier Button");
             helper.performClick(ProductsPageLocators03.productpageContactSupplierButton);
             LogHelper.info("Clicked on ContactSupplier Button");
-            helper.switchWindow();
+            helper.switchToNewWindow();
             LogHelper.info("Window Switched from First Child To the Second Child");
         } catch (Exception e) {
             e.printStackTrace();

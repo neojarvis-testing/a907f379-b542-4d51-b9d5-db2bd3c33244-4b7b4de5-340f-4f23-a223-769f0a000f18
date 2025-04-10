@@ -1,5 +1,6 @@
 package utils;
-
+ 
+ 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -100,7 +101,7 @@ public class HelperUtility {
     /**
      * Author: Krushna Rajkule
      * Description: Returns a list of WebElements matching the specified XPath
-     * @param locator
+     * @param XPath
      * @return
      */
     public List<WebElement> getElementsByXPath(By locator){
@@ -111,7 +112,7 @@ public class HelperUtility {
       * Author: Krushna Rajkule
       * Description: Switches focus to the child window in a multi-window scenario
       */
-    public void switchWindow() 
+    public void switchToNewWindow() 
     {
     	String parent = driver.getWindowHandle();
     	Set<String> child=driver.getWindowHandles();
@@ -122,6 +123,30 @@ public class HelperUtility {
     		}
     	}
     }
+
+
+    /**
+     * Author: Sushil Lodhi
+     * @param attributeName
+     */
+    public String retrieveDomAttribute(By locator,String attributeName){
+        try {
+            WebElement element=Root.driver.findElement(locator);
+           return element.getDomAttribute(attributeName);
+
+        } catch (Exception e) {
+            LogHelper.info(e.getMessage());
+        }
+        return null;
+    }
+
+    public void scrollOnPage(int yPixel){
+        JavascriptExecutor js = (JavascriptExecutor)Root.driver;
+        js.executeScript("window.scrollBy(0, " + yPixel + ")", "");
+    }
+
+
+
     /**
      * Author: Krushna Rajkule
      * Description: Switches focus back to the parent window in a multi-window scenario
@@ -139,31 +164,6 @@ public class HelperUtility {
     	}
     }
 
-    /**
-     * Author: Krushna Rajkule
-     * Description: Checks and returns whether a WebElement is visible on the page
-     * @param pageElement
-     * @return
-     */
-    public 	boolean isWebElementDisplayed(By locator) {
-        try {
-            WebElement pageElement = driver.findElement(locator);
-            return pageElement.isDisplayed();
-        } catch (NoSuchElementException e) {
-        	return false;
-        }
-    }
-
-    public void verifyAcutalAndExpected(String expected, String actual){
-        try{
-        if(actual.contains(expected)){
-            Assert.assertTrue(true);
-        }
-        }catch(AssertionError error){
-         error.printStackTrace();
-    }
-    }
-
     public void switchToWindow(int windowIndex) {
         Set<String> handles = driver.getWindowHandles();
         int count = 0;
@@ -176,10 +176,33 @@ public class HelperUtility {
         }
     }
 
-    public void scrollOnPage(int yPixel){
-        JavascriptExecutor js = (JavascriptExecutor)Root.driver;
-        js.executeScript("window.scrollBy(0, " + yPixel + ")", "");
+
+    /**
+     * Author: Krushna Rajkule
+     * Description: Checks and returns whether a WebElement is visible on the page
+     * @param pageElement
+     * @return
+     */
+    public 	boolean isWebElementElementDisplayed(By locator) {
+        try {
+            return driver.findElement(locator).isDisplayed();
+        } catch (NoSuchElementException e) {
+        	return false;
+        }
     }
+
+    /**
+     * Author: Sushil Lodhi
+     */
+    public void verifyAcutalAndExpected(String expected, String actual){
+        try{
+        if(actual.contains(expected)){
+            Assert.assertTrue(true);
+        }
+        }catch(AssertionError error){
+         error.printStackTrace();
+    }
+    }
+
 }
  
-

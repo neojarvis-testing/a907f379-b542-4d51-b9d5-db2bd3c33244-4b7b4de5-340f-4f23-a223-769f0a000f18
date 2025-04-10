@@ -1,13 +1,11 @@
 package utils;
- 
+
 import org.apache.log4j.Logger;
- 
+
 public class LogHelper {
-   
- 
+	
+
     private static final Logger logger = Logger.getLogger(LogHelper.class);
-   
-   
     /**
      * Author: Bharani
      * Description: DEBUG status in a Log
@@ -16,8 +14,7 @@ public class LogHelper {
     public static void debug(String message) {
         logger.debug(message);
     }
- 
- 
+
     /**
      * Author: Bharani
      * Description: INFO status in log
@@ -26,8 +23,7 @@ public class LogHelper {
     public static void info(String message) {
         logger.info(message);
     }
- 
-   
+
     /**
      * Author: Bharani
      * Description: ERROR status in log
@@ -36,7 +32,7 @@ public class LogHelper {
     public static void error(String message) {
         logger.error(message);
     }
-   
+
     /**
      * Author: Bharani
      * Description: TRACE status in log
@@ -46,5 +42,7 @@ public class LogHelper {
         logger.trace(message);
     }
    
- 
+
+
 }
+

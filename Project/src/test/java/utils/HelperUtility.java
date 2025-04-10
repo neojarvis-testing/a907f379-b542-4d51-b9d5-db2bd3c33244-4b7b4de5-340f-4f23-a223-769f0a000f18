@@ -1,6 +1,5 @@
 package utils;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -9,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+
 
 import java.util.List;
 import java.util.Set;
@@ -47,6 +47,7 @@ public class HelperUtility {
  * @param locator
  * @param data
  */
+
     public void enterText(By locator, String data) {
         try {
             WebElement pageElement = driver.findElement(locator);
@@ -56,6 +57,7 @@ public class HelperUtility {
             e.printStackTrace();
         }
     }
+
 
     /**
      * Author: Krushna Rajkule
@@ -68,11 +70,12 @@ public class HelperUtility {
             WebElement pageElement = driver.findElement(locator);
             return pageElement.getText();
         } catch (Exception e) {
-            
             e.printStackTrace();
             return " ";
         }
     }
+
+
 
     /**
      * Author: Krushna Rajkule
@@ -105,6 +108,7 @@ public class HelperUtility {
         }
     }
 
+
     /**
      * Author: Krushna Rajkule
      * Description: Returns a list of WebElements matching the specified XPath
@@ -115,8 +119,6 @@ public class HelperUtility {
         return driver.findElements(locator);
     }
 
-
-
      /**
       * Author: Krushna Rajkule
       * Description: Switches focus to the child window in a multi-window scenario
@@ -125,7 +127,6 @@ public class HelperUtility {
     {
     	String parent = driver.getWindowHandle();
     	Set<String> child=driver.getWindowHandles();
-    	
     	for(String id:child) {
     		if(!parent.equals(id)) 
     		{
@@ -133,7 +134,22 @@ public class HelperUtility {
     		}
     	}
     }
-    
+
+
+    /**
+     * Author: Sushil Lodhi
+     * @param attributeName
+     */
+    public String retrieveDomAttribute(By locator,String attributeName){
+        try {
+            WebElement element=Root.driver.findElement(locator);
+           return element.getDomAttribute(attributeName);
+        } catch (Exception e) {
+            LogHelper.info(e.getMessage());
+        }
+        return null;
+    }
+
     /**
      * Author: Krushna Rajkule
      * Description: Switches focus back to the parent window in a multi-window scenario
@@ -149,27 +165,38 @@ public class HelperUtility {
     			driver.switchTo().window(parent);
     		}
     	}
-    	
+
     }
-    
-    
-   
+
+    public void switchToWindow(int windowIndex) {
+        Set<String> handles = driver.getWindowHandles();
+        int count = 0;
+        for (String handle : handles) {
+            if (count == windowIndex) {
+                driver.switchTo().window(handle);
+                break;
+            }
+            count++;
+        }
+    }
+
     /**
      * Author: Krushna Rajkule
      * Description: Checks and returns whether a WebElement is visible on the page
      * @param pageElement
      * @return
      */
-    public 	boolean isWebElementDisplayed(By locator) {
+    public 	boolean isWebElementElementDisplayed(By locator) {
         try {
-            WebElement pageElement=driver.findElement(locator);
-            return pageElement.isDisplayed();
-           
+            return driver.findElement(locator).isDisplayed();
         } catch (NoSuchElementException e) {
         	return false;
         }
     }
 
+    /**
+     * Author: Sushil Lodhi
+     */
     public void verifyAcutalAndExpected(String expected, String actual){
         try{
         if(actual.contains(expected)){
@@ -186,7 +213,4 @@ public class HelperUtility {
     }
     
 }
-
-	
-
 

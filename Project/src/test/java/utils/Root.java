@@ -40,7 +40,7 @@ public class Root {
         try {
             loadProperties();
         } catch (IOException e) {
-            
+
             e.printStackTrace();
         }
         String executionType = prop.getProperty("executiontype");

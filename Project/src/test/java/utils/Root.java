@@ -1,4 +1,5 @@
 package utils;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -39,11 +40,12 @@ public class Root {
         try {
             loadProperties();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         }
         String executionType = prop.getProperty("executiontype");
         String browserName = prop.getProperty("browser");
+
         if ("remote".equalsIgnoreCase(executionType)) {
             URL gridUrl;
             try {

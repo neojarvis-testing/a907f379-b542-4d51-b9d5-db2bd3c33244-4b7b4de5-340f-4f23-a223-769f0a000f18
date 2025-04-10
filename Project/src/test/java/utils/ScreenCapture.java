@@ -1,15 +1,14 @@
 package utils;
 
+
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.io.FileHandler;
-
 
 public class ScreenCapture {
        public static TakesScreenshot ts;
@@ -18,6 +17,7 @@ public class ScreenCapture {
         * Author: Suhansh Bagre
         * Description: captures screenshot of whole webPage
         * @param filename
+
         * @return 
         */
        public static String takePageScreenShot(String filename) {

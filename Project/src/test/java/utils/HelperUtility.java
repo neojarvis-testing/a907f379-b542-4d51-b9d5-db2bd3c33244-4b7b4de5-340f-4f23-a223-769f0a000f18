@@ -9,25 +9,24 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
- 
 import java.util.List;
 import java.util.Set;
  
  
 public class HelperUtility {
- 
-    private WebDriver driver;
+
+	private WebDriver driver;
  
     public HelperUtility(WebDriver driver) {
         this.driver = driver;
     }
  
-   
+    
 /**
 * Author: Krushna Rajkule
 *
 * Description: Performs a click action on a WebElement located by the specified locator
-*
+* 
 * @param locator
 */
     public void performClick(By locator) {
@@ -112,19 +111,19 @@ public class HelperUtility {
       * Author: Krushna Rajkule
       * Description: Switches focus to the child window in a multi-window scenario
       */
-    public void switchToNewWindow()
+    public void switchToNewWindow() 
     {
-        String parent = driver.getWindowHandle();
-        Set<String> child=driver.getWindowHandles();
-        for(String id:child) {
-            if(!parent.equals(id))
-            {
-                driver.switchTo().window(id);
-            }
-        }
+    	String parent = driver.getWindowHandle();
+    	Set<String> child=driver.getWindowHandles();
+    	for(String id:child) {
+    		if(!parent.equals(id)) 
+    		{
+    			driver.switchTo().window(id);
+    		}
+    	}
     }
- 
- 
+
+
     /**
      * Author: Sushil Lodhi
      * @param attributeName
@@ -133,32 +132,31 @@ public class HelperUtility {
         try {
             WebElement element=Root.driver.findElement(locator);
            return element.getDomAttribute(attributeName);
- 
         } catch (Exception e) {
             LogHelper.info(e.getMessage());
         }
         return null;
     }
- 
- 
-   
+
+
+
     /**
      * Author: Krushna Rajkule
      * Description: Switches focus back to the parent window in a multi-window scenario
      */
     public void switchToParentWindow()
     {
-        String parent = driver.getWindowHandle();
-        Set<String> child=driver.getWindowHandles();
-        for(String id:child)
-        {
-            if(parent.equals(id))
-            {
-                driver.switchTo().window(parent);
-            }
-        }
+    	String parent = driver.getWindowHandle();
+    	Set<String> child=driver.getWindowHandles();
+    	for(String id:child) 
+    	{
+    		if(parent.equals(id)) 
+    		{
+    			driver.switchTo().window(parent);
+    		}
+    	}
     }
- 
+
     public void switchToWindow(int windowIndex) {
         Set<String> handles = driver.getWindowHandles();
         int count = 0;
@@ -170,22 +168,22 @@ public class HelperUtility {
             count++;
         }
     }
- 
- 
+
+
     /**
      * Author: Krushna Rajkule
      * Description: Checks and returns whether a WebElement is visible on the page
      * @param pageElement
      * @return
      */
-    public  boolean isWebElementElementDisplayed(By locator) {
+    public 	boolean isWebElementElementDisplayed(By locator) {
         try {
             return driver.findElement(locator).isDisplayed();
         } catch (NoSuchElementException e) {
-            return false;
+        	return false;
         }
     }
- 
+
     /**
      * Author: Sushil Lodhi
      */

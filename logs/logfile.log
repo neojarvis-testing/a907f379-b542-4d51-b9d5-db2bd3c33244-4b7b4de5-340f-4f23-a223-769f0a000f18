@@ -1,0 +1,1 @@
+[ERROR] 2025-04-10 14:57:22,850 utils.LogHelper error - Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "ts" is null

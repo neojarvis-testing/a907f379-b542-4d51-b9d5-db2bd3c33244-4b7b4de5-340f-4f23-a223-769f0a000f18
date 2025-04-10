@@ -1,0 +1,8 @@
+target/
+log/
+screenshots/
+reports/
+testdata/
+config/
+
+

@@ -1,9 +1,9 @@
 package utils;
-
-
+ 
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+ 
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -44,6 +44,7 @@ public class ScreenCapture {
         * Author: Suhansh Bagre
         * Description: captures screenshot of a particular element of a webPage
         * @param filename
+
         * @return 
         */
        public static String takeElementScreenShot(By elementLocator, String fileName) {

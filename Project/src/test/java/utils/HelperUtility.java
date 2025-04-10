@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
-
 import java.util.List;
 import java.util.Set;
 
@@ -53,7 +52,6 @@ public class HelperUtility {
             WebElement pageElement = driver.findElement(locator);
             pageElement.sendKeys(data);
         } catch (Exception e) {
-            
             e.printStackTrace();
         }
     }
@@ -77,6 +75,7 @@ public class HelperUtility {
 
 
 
+
     /**
      * Author: Krushna Rajkule
      * Description: Sends the Enter key action to a WebElement located by the specified locator
@@ -87,14 +86,16 @@ public class HelperUtility {
             WebElement pageElement = driver.findElement(locator);
             pageElement.sendKeys(Keys.ENTER);
         } catch (Exception e) {
-            
             e.printStackTrace();
         }
     }
 
     /**
      * Author: Krushna Rajkule
-     * Description: Simulates mouse hover action over a WebElement located by the given locator using Actions class
+     * Description: Simulates mouse hover action over a WebElement located by the
+     * given locator using Actions class
+     * 
+
      * @param locator
      */
     public void mouseHover(By locator) {
@@ -103,7 +104,7 @@ public class HelperUtility {
             Actions actions = new Actions(driver);
             actions.moveToElement(pageElement).perform();
         } catch (Exception e) {
-            
+
             e.printStackTrace();
         }
     }
@@ -165,7 +166,6 @@ public class HelperUtility {
     			driver.switchTo().window(parent);
     		}
     	}
-
     }
 
     public void switchToWindow(int windowIndex) {

@@ -4,7 +4,6 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
  
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
@@ -17,11 +16,13 @@ public class ReportGenerator {
 	private static ExtentReports extentReport;
 	
 	public static ExtentReports generateExtentReport(String reportName) {
+
         if (extentReport == null) {
             extentReport = createExtentReport(reportName);
         }
         return extentReport;
     }
+
 
 	
 	private static ExtentReports createExtentReport(String reportName) {
@@ -35,6 +36,7 @@ public class ReportGenerator {
         sparkReporter.config().setTimeStampFormat("yyyy.MM.dd.HH.mm.ss");
         extentReport.attachReporter(sparkReporter);
         return extentReport;
+
 
 	}
 	

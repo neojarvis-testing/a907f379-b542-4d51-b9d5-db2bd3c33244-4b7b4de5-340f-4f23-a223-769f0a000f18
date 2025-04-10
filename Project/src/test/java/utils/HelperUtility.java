@@ -9,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
-
 import java.util.List;
 import java.util.Set;
  
@@ -133,16 +132,10 @@ public class HelperUtility {
         try {
             WebElement element=Root.driver.findElement(locator);
            return element.getDomAttribute(attributeName);
-
         } catch (Exception e) {
             LogHelper.info(e.getMessage());
         }
         return null;
-    }
-
-    public void scrollOnPage(int yPixel){
-        JavascriptExecutor js = (JavascriptExecutor)Root.driver;
-        js.executeScript("window.scrollBy(0, " + yPixel + ")", "");
     }
 
 
@@ -204,5 +197,9 @@ public class HelperUtility {
     }
     }
 
-}
+    public void scrollOnPage(int yPixel){
+        JavascriptExecutor js = (JavascriptExecutor)Root.driver;
+        js.executeScript("window.scrollBy(0, " + yPixel + ")", "");
+    }
  
+}

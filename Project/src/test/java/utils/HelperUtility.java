@@ -12,38 +12,41 @@ import org.testng.Assert;
 import java.util.List;
 import java.util.Set;
 
+
 public class HelperUtility {
 
-    private WebDriver driver;
+	private WebDriver driver;
 
-    public HelperUtility(WebDriver driver) {
+    public HelperUtility(WebDriver driver) 
+    {
         this.driver = driver;
     }
 
-    /**
-     * Author: Krushna Rajkule
-     *
-     * Description: Performs a click action on a WebElement located by the specified
-     * locator
-     *
-     * @param locator
-     */
+    
+/**
+ * Author: Krushna Rajkule
+ *
+ * Description: Performs a click action on a WebElement located by the specified locator
+ * 
+ * @param locator
+ */
     public void performClick(By locator) {
         try {
             WebElement pageElement = driver.findElement(locator);
             pageElement.click();
         } catch (Exception e) {
+            
             e.printStackTrace();
         }
     }
+    
+/**
+ *  Author: Krushna Rajkule
+ *  Description: Inputs text into a WebElement using the given locator and data
+ * @param locator
+ * @param data
+ */
 
-    /**
-     * Author: Krushna Rajkule
-     * Description: Inputs text into a WebElement using the given locator and data
-     * 
-     * @param locator
-     * @param data
-     */
     public void enterText(By locator, String data) {
         try {
             WebElement pageElement = driver.findElement(locator);
@@ -53,11 +56,10 @@ public class HelperUtility {
         }
     }
 
+
     /**
      * Author: Krushna Rajkule
-     * Description: Retrieves and returns the text content of a WebElement located
-     * by the given locator
-     * 
+     * Description: Retrieves and returns the text content of a WebElement located by the given locator
      * @param locator
      * @return
      */
@@ -71,11 +73,12 @@ public class HelperUtility {
         }
     }
 
+
+
+
     /**
      * Author: Krushna Rajkule
-     * Description: Sends the Enter key action to a WebElement located by the
-     * specified locator
-     * 
+     * Description: Sends the Enter key action to a WebElement located by the specified locator
      * @param locator
      */
     public void performEnter(By locator) {
@@ -92,6 +95,7 @@ public class HelperUtility {
      * Description: Simulates mouse hover action over a WebElement located by the
      * given locator using Actions class
      * 
+
      * @param locator
      */
     public void mouseHover(By locator) {
@@ -100,45 +104,47 @@ public class HelperUtility {
             Actions actions = new Actions(driver);
             actions.moveToElement(pageElement).perform();
         } catch (Exception e) {
+
             e.printStackTrace();
         }
     }
 
+
     /**
      * Author: Krushna Rajkule
      * Description: Returns a list of WebElements matching the specified XPath
-     * 
      * @param XPath
      * @return
      */
-    public List<WebElement> getElementsByXPath(By locator) {
+    public List<WebElement> getElementsByXPath(By locator){
         return driver.findElements(locator);
     }
 
-    /**
-     * Author: Krushna Rajkule
-     * Description: Switches focus to the child window in a multi-window scenario
-     */
-    public void switchToNewWindow() {
-        String parent = driver.getWindowHandle();
-        Set<String> child = driver.getWindowHandles();
-        for (String id : child) {
-            if (!parent.equals(id)) {
-                driver.switchTo().window(id);
-            }
-        }
+     /**
+      * Author: Krushna Rajkule
+      * Description: Switches focus to the child window in a multi-window scenario
+      */
+    public void switchToNewWindow() 
+    {
+    	String parent = driver.getWindowHandle();
+    	Set<String> child=driver.getWindowHandles();
+    	for(String id:child) {
+    		if(!parent.equals(id)) 
+    		{
+    			driver.switchTo().window(id);
+    		}
+    	}
     }
+
 
     /**
      * Author: Sushil Lodhi
-     * 
      * @param attributeName
      */
-    public String retrieveDomAttribute(By locator, String attributeName) {
+    public String retrieveDomAttribute(By locator,String attributeName){
         try {
-            WebElement element = Root.driver.findElement(locator);
-            return element.getDomAttribute(attributeName);
-
+            WebElement element=Root.driver.findElement(locator);
+           return element.getDomAttribute(attributeName);
         } catch (Exception e) {
             LogHelper.info(e.getMessage());
         }
@@ -147,17 +153,19 @@ public class HelperUtility {
 
     /**
      * Author: Krushna Rajkule
-     * Description: Switches focus back to the parent window in a multi-window
-     * scenario
+     * Description: Switches focus back to the parent window in a multi-window scenario
      */
-    public void switchToParentWindow() {
-        String parent = driver.getWindowHandle();
-        Set<String> child = driver.getWindowHandles();
-        for (String id : child) {
-            if (parent.equals(id)) {
-                driver.switchTo().window(parent);
-            }
-        }
+    public void switchToParentWindow()
+    {
+    	String parent = driver.getWindowHandle();
+    	Set<String> child=driver.getWindowHandles();
+    	for(String id:child) 
+    	{
+    		if(parent.equals(id)) 
+    		{
+    			driver.switchTo().window(parent);
+    		}
+    	}
     }
 
     public void switchToWindow(int windowIndex) {
@@ -175,34 +183,34 @@ public class HelperUtility {
     /**
      * Author: Krushna Rajkule
      * Description: Checks and returns whether a WebElement is visible on the page
-     * 
      * @param pageElement
      * @return
      */
-    public boolean isWebElementElementDisplayed(By locator) {
+    public 	boolean isWebElementElementDisplayed(By locator) {
         try {
             return driver.findElement(locator).isDisplayed();
         } catch (NoSuchElementException e) {
-            return false;
+        	return false;
         }
     }
 
     /**
      * Author: Sushil Lodhi
      */
-    public void verifyAcutalAndExpected(String expected, String actual) {
-        try {
-            if (actual.contains(expected)) {
-                Assert.assertTrue(true);
-            }
-        } catch (AssertionError error) {
-            error.printStackTrace();
+    public void verifyAcutalAndExpected(String expected, String actual){
+        try{
+        if(actual.contains(expected)){
+            Assert.assertTrue(true);
         }
+        }catch(AssertionError error){
+         error.printStackTrace();
+    }
     }
 
-    public void scrollOnPage(int yPixel) {
-        JavascriptExecutor js = (JavascriptExecutor) Root.driver;
+    public void scrollOnPage(int yPixel){
+        JavascriptExecutor js = (JavascriptExecutor)Root.driver;
         js.executeScript("window.scrollBy(0, " + yPixel + ")", "");
     }
-
+    
 }
+

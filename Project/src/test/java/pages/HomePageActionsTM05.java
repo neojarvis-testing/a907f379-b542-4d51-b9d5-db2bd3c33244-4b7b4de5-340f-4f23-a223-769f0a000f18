@@ -50,7 +50,7 @@ public class HomePageActionsTM05 {
         helper.performClick(HomePageLocatorsTM05.registerPageEmail);
         LogHelper.info("Clicked on Email input box ");
         test.log(Status.INFO, "Clicked on Email input box");
-        String text=ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"),Root.prop.getProperty("sheetname"), 0, 0);
+        String text=ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"),"Sheet5", 0, 0);
         LogHelper.info("Read data from Excel");
         test.log(Status.INFO, "Read data from Excel");
         helper.enterText(HomePageLocatorsTM05.registerPageEmailinput,text);
@@ -74,7 +74,7 @@ public class HomePageActionsTM05 {
         String userUrl=Root.driver.getCurrentUrl();
         LogHelper.info("Getting url from current window");
         test.log(Status.INFO, "Getting url from current window");
-        String text=ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"),Root.prop.getProperty("sheetname"), 1, 0);
+        String text=ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"),"Sheet5", 1, 0);
         if(userUrl.contains(text)){
             Assert.assertTrue(true);
         }
@@ -91,7 +91,7 @@ public class HomePageActionsTM05 {
         LogHelper.info("Switched to new Tab");
         test.log(Status.INFO, "Switched to new Tab");
         String asrUrl=Root.driver.getCurrentUrl();
-        String text1=ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"),Root.prop.getProperty("sheetname"), 2, 0);
+        String text1=ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"),"Sheet5", 2, 0);
         if(asrUrl.contains(text1)){
             Assert.assertTrue(true);
         }
@@ -104,7 +104,7 @@ public class HomePageActionsTM05 {
         test.log(Status.INFO, "Clicked on MeetPageSuppliers");
         helper.switchToNewWindow();
         String meetUrl=Root.driver.getCurrentUrl();
-        String text2=ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"),Root.prop.getProperty("sheetname"), 3, 0);
+        String text2=ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"),"Sheet5", 3, 0);
         if(meetUrl.contains(text2)){
             Assert.assertTrue(true);
         }

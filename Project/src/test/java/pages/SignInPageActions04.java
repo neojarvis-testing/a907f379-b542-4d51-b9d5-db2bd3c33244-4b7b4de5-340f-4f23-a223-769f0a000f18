@@ -34,7 +34,7 @@ public class SignInPageActions04 {
         helper.performClick(SignInPageLocators04.signInPageEspanolLink);
         LogHelper.info("Click on "+helper.retrieveText(SignInPageLocators04.signInPageLanguageDropdown));
         test.log(Status.INFO, "Click on "+helper.retrieveText(SignInPageLocators04.signInPageLanguageDropdown));
-   helper.verifyAcutalAndExpected(ExcelFileHandler.getCellData(Root.prop.getProperty("ExcelPath"), "Sheet1", 1, 1), helper.retrieveText(SignInPageLocators04.signInPageLanguageDropdown));
+   helper.verifyAcutalAndExpected(ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"), "Sheet4", 1, 1), helper.retrieveText(SignInPageLocators04.signInPageLanguageDropdown));
         helper.mouseHover(SignInPageLocators04.signInPageLanguageDropdown);
         ScreenCapture.takePageScreenShot(Root.driver.getTitle());
       
@@ -45,7 +45,7 @@ public class SignInPageActions04 {
         helper.performClick(SignInPageLocators04.signInPageFranceLink);
         LogHelper.info("Click on "+helper.retrieveText(SignInPageLocators04.signInPageLanguageDropdown));
         test.log(Status.INFO, "Click on "+helper.retrieveText(SignInPageLocators04.signInPageLanguageDropdown));
-        helper.verifyAcutalAndExpected(ExcelFileHandler.getCellData(Root.prop.getProperty("ExcelPath"), "Sheet1", 2, 1), helper.retrieveText(SignInPageLocators04.signInPageLanguageDropdown));
+        helper.verifyAcutalAndExpected(ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"), "Sheet4", 2, 1), helper.retrieveText(SignInPageLocators04.signInPageLanguageDropdown));
         helper.mouseHover(SignInPageLocators04.signInPageLanguageDropdown);
         }catch(Exception e){
             LogHelper.info(e.getMessage());
@@ -56,7 +56,7 @@ public class SignInPageActions04 {
         try{
         helper.performClick(SignInPageLocators04.signInPageGermanLink);
         LogHelper.info("Click on "+helper.retrieveText(SignInPageLocators04.signInPageLanguageDropdown));
-        helper.verifyAcutalAndExpected(ExcelFileHandler.getCellData(Root.prop.getProperty("ExcelPath"), "Sheet1", 3, 1), helper.retrieveText(SignInPageLocators04.signInPageLanguageDropdown));
+        helper.verifyAcutalAndExpected(ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"), "Sheet4", 3, 1), helper.retrieveText(SignInPageLocators04.signInPageLanguageDropdown));
         helper.mouseHover(SignInPageLocators04.signInPageLanguageDropdown);
         }
         catch(Exception e){
@@ -69,7 +69,7 @@ public class SignInPageActions04 {
         try{
         helper.performClick(SignInPageLocators04.signInPageRussianLink);
         LogHelper.info("Click on "+helper.retrieveText(SignInPageLocators04.signInPageLanguageDropdown));
-        helper.verifyAcutalAndExpected(ExcelFileHandler.getCellData(Root.prop.getProperty("ExcelPath"), "Sheet1", 4, 1), helper.retrieveText(SignInPageLocators04.signInPageLanguageDropdown));
+        helper.verifyAcutalAndExpected(ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"), "Sheet4", 4, 1), helper.retrieveText(SignInPageLocators04.signInPageLanguageDropdown));
         helper.mouseHover(SignInPageLocators04.signInPageLanguageDropdown);
         }catch(Exception e){
             LogHelper.info(e.getMessage());
@@ -81,7 +81,7 @@ public class SignInPageActions04 {
         try{
         helper.performClick(SignInPageLocators04.signInPageJapaneseLink);
         LogHelper.info("Click on "+helper.retrieveText(SignInPageLocators04.signInPageLanguageDropdown));
-        helper.verifyAcutalAndExpected(ExcelFileHandler.getCellData(Root.prop.getProperty("ExcelPath"), "Sheet1", 5, 1), helper.retrieveText(SignInPageLocators04.signInPageLanguageDropdown));
+        helper.verifyAcutalAndExpected(ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"), "Sheet4", 5, 1), helper.retrieveText(SignInPageLocators04.signInPageLanguageDropdown));
         helper.mouseHover(SignInPageLocators04.signInPageLanguageDropdown);
         }
         catch(Exception e){
@@ -93,7 +93,7 @@ public class SignInPageActions04 {
         try{
         helper.performClick(SignInPageLocators04.signInPageEnglishLink);
         LogHelper.info("Click on "+helper.retrieveText(SignInPageLocators04.signInPageLanguageDropdown));
-        helper.verifyAcutalAndExpected(ExcelFileHandler.getCellData(Root.prop.getProperty("ExcelPath"), "Sheet1", 6, 1), helper.retrieveText(SignInPageLocators04.signInPageLanguageDropdown));
+        helper.verifyAcutalAndExpected(ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"), "Sheet4", 6, 1), helper.retrieveText(SignInPageLocators04.signInPageLanguageDropdown));
         }catch(Exception e){
             LogHelper.info(e.getMessage());
         }

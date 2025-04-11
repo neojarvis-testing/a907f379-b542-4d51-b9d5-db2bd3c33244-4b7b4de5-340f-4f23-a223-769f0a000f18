@@ -33,7 +33,7 @@ public class HomePageActions03 {
         try {
             helper.performClick(HomePageLocators03.homePageSearchBar);
             LogHelper.info("Clicked on HomePageSearchBar");
-            String productName = ExcelFileHandler.getCellData(Root.prop.getProperty("excel"), "Sheet1", 0, 0);
+            String productName = ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"), "Sheet3", 0, 0);
             helper.enterText(HomePageLocators03.homePageSearchBar, productName);
             LogHelper.info("Entered Value inside the SearchBar");
             helper.performClick(HomePageLocators03.homePageSearchButton);

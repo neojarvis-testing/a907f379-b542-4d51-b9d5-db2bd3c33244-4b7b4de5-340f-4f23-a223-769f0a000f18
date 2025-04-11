@@ -97,8 +97,8 @@ public class SearchResultPageActionsTM02 {
 
         try {
             helper.switchToParentWindow();
-            String excelSheetPath = Root.prop.getProperty("excelSheetPath");
-            String searchValue = ExcelFileHandler.getCellData(excelSheetPath, "Sheet1", 2, 0);
+            String excelSheetPath = Root.prop.getProperty("excelpath");
+            String searchValue = ExcelFileHandler.getCellData(excelSheetPath, "Sheet2", 2, 0);
             // System.out.println(searchValue);
 
             helper.performClick(HomePageLocatorsTM02.homePageSearchBar);

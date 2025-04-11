@@ -31,7 +31,7 @@ public class TestTM05 extends Root {
         homePageAction.closePopup();
 
     }
-    @Test(priority = 1, enabled =false)
+    @Test(priority = 1, enabled =true)
     public void testCase02() throws InterruptedException{
         homePageAction = new HomePageActionsTM05(driver);
         test=reports.createTest("TestCaseOne");

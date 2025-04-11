@@ -90,7 +90,7 @@ public class ProductsPageActions03 {
         try {
             WebElement form = Root.driver.findElement(ProductsPageLocators03.productpageVerifyFormIsdisplayed);
             LogHelper.info("Verified the Presence of Form : Send Inquiry Form");
-            String errorMessage = ExcelFileHandler.getCellData(Root.prop.getProperty("excel"), "Sheet1", 6, 0);
+            String errorMessage = ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"), "Sheet3", 6, 0);
             Assert.assertTrue(form.isDisplayed(), errorMessage);
         } catch (Exception e) {
             e.printStackTrace();
@@ -108,7 +108,7 @@ public class ProductsPageActions03 {
         try {
             helper.performClick(ProductsPageLocators03.productpageTextArea);
             LogHelper.info("Clicked on ProductArea Content");
-            String inValidData = ExcelFileHandler.getCellData(Root.prop.getProperty("excel"), "Sheet1", 1, 0);
+            String inValidData = ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"), "Sheet3", 1, 0);
             // String inValidData = "Size: 10x10 cm" +
             // "Application: Industrial machinery" +
             // "Specifications: Grade 304, thickness 2 mm" +
@@ -128,7 +128,7 @@ public class ProductsPageActions03 {
     public void enterEmail() {
         try {
             helper.performClick(ProductsPageLocators03.productpageEmailBox);
-            String emailSent = ExcelFileHandler.getCellData(Root.prop.getProperty("excel"), "Sheet1", 2, 0);
+            String emailSent = ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"), "Sheet3", 2, 0);
             // String emailSent = "mjdtest@gmail.com";
             helper.enterText(ProductsPageLocators03.productpageEmailBox, emailSent);
             LogHelper.info("Sent The Text For Email");
@@ -159,15 +159,15 @@ public class ProductsPageActions03 {
     public void sendFormDetails() {
         try {
             helper.performClick(ProductsPageLocators03.productpageSendName);
-            String name = ExcelFileHandler.getCellData(Root.prop.getProperty("excel"), "Sheet1", 3, 0);
+            String name = ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"), "Sheet3", 3, 0);
             // String name = "Raja";
             helper.enterText(ProductsPageLocators03.productpageSendName, name);
             helper.performClick(ProductsPageLocators03.productpageSendCompanyName);
             // String company = "LTI";
-            String company = ExcelFileHandler.getCellData(Root.prop.getProperty("excel"), "Sheet1", 4, 0);
+            String company = ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"), "Sheet3", 4, 0);
             helper.enterText(ProductsPageLocators03.productpageSendCompanyName, company);
             helper.performClick(ProductsPageLocators03.productpageSendMobile);
-            String mobile = ExcelFileHandler.getCellData(Root.prop.getProperty("excel"), "Sheet1", 5, 0);
+            String mobile = ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"), "Sheet3", 5, 0);
             // String mobile = "9090909090";
             helper.enterText(ProductsPageLocators03.productpageSendMobile, mobile);
             LogHelper.info("Filled the Form");

@@ -28,9 +28,9 @@ public class HomePageActionsTM02 {
 
     public void searchWires(ExtentTest test) {
         try {
-            String excelSheetPath = Root.prop.getProperty("excelSheetPath");
+            String excelSheetPath = Root.prop.getProperty("excelpath");
 
-            String searchValue = ExcelFileHandler.getCellData(excelSheetPath, "Sheet1", 1, 0);
+            String searchValue = ExcelFileHandler.getCellData(excelSheetPath, "Sheet2", 1, 0);
 
             helper.performClick(HomePageLocatorsTM02.homePageSearchBar);
             helper.enterText(HomePageLocatorsTM02.homePageSearchBar, searchValue);

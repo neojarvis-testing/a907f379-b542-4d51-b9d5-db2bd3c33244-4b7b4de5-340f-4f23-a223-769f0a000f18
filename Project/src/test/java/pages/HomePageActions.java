@@ -49,12 +49,16 @@ public class HomePageActions {
         helper.performClick(HomePageLocators.homePageSearchBar);
         LogHelper.info(helper.retrieveDomAttribute(HomePageLocators.homePageSearchBar, "placeholder"));
         helper.enterText(HomePageLocators.homePageSearchBar, productName);
+        LogHelper.info("enter value"+productName);
         helper.performClick(HomePageLocators.homePageSearchButton);
+        LogHelper.info(helper.getCurrentMethodName()+" on "+HomePageLocators.homePageSearchButton);
+        LogHelper.info(Thread.currentThread().getStackTrace().toString());
     } 
 
 
     public void homePageHoverOverBuyer(){
         helper.mouseHover(HomePageLocators.homePageBuyerDropdownMenu);
+
     }
 
     public void clickOnProductDirectory(){

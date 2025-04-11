@@ -24,7 +24,7 @@ public class RegisteredPageActions04 {
 
 public void clickOnSignInNowLink(){
 try{
-    helper.verifyAcutalAndExpected(ExcelFileHandler.getCellData(Root.prop.getProperty("ExcelPath"), "Sheet1", 1, 0), Root.driver.getTitle());
+    helper.verifyAcutalAndExpected(ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"), "Sheet4", 1, 0), Root.driver.getTitle());
     helper.performClick(RegisteredPageLocators04.registerPageSignInNowLink);
 }catch(Exception e){
     LogHelper.info(e.getMessage());

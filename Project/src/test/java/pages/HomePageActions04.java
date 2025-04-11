@@ -54,7 +54,7 @@ try{
         helper.performClick(HomePageLocators04.homePageSideBarCategoryManufacturingLink);
         LogHelper.info("Click On "+helper.retrieveText(CategoriesPageLocators04.categoriesPageSideBarCategoryNameLabel)+" Link");
         test.log(Status.INFO, "Click On "+helper.retrieveText(CategoriesPageLocators04.categoriesPageSideBarCategoryNameLabel) );
-        helper.verifyAcutalAndExpected(ExcelFileHandler.getCellData(Root.prop.getProperty("ExcelPath"), "Sheet1", 7, 1),
+        helper.verifyAcutalAndExpected(ExcelFileHandler.getCellData(Root.prop.getProperty("ExcelPath"), "Sheet4", 7, 1),
                helper.retrieveText(CategoriesPageLocators04.categoriesPageSideBarCategoryNameLabel));
                helper.performClick(HomePageLocators04.homePageMadeInChinaLogo);
 }catch(Exception e){
@@ -69,7 +69,7 @@ try{
         LogHelper.info("Click On "+helper.retrieveText(CategoriesPageLocators04.categoriesPageSideBarCategoryNameLabel)+" Link");
         test.log(Status.INFO, "Click On "+helper.retrieveText(CategoriesPageLocators04.categoriesPageSideBarCategoryNameLabel) );
         ReportGenerator.addScreenshotToReport(helper.retrieveText(CategoriesPageLocators04.categoriesPageSideBarCategoryNameLabel), test, "Construction Link");
-        helper.verifyAcutalAndExpected(ExcelFileHandler.getCellData(Root.prop.getProperty("ExcelPath"), "Sheet1", 8, 1),
+        helper.verifyAcutalAndExpected(ExcelFileHandler.getCellData(Root.prop.getProperty("ExcelPath"), "Sheet4", 8, 1),
                 helper.retrieveText(CategoriesPageLocators04.categoriesPageSideBarCategoryNameLabel));
 
                 helper.performClick(HomePageLocators04.homePageMadeInChinaLogo);
@@ -81,7 +81,7 @@ try{
         try{
         helper.performClick(HomePageLocators04.homePageSideBarCategoryIndustrialLink);
         LogHelper.info("Click On "+helper.retrieveText(CategoriesPageLocators04.categoriesPageSideBarCategoryNameLabel)+" Link");
-        helper.verifyAcutalAndExpected(ExcelFileHandler.getCellData(Root.prop.getProperty("ExcelPath"), "Sheet1", 9, 1),
+        helper.verifyAcutalAndExpected(ExcelFileHandler.getCellData(Root.prop.getProperty("ExcelPath"), "Sheet4", 9, 1),
                 helper.retrieveText(CategoriesPageLocators04.categoriesPageSideBarCategoryNameLabel));
                 helper.performClick(HomePageLocators04.homePageMadeInChinaLogo);
         }catch(Exception e){
@@ -94,7 +94,7 @@ try{
         helper.performClick(HomePageLocators04.homePageSideBarCategoryElectrialLink);
         LogHelper.info("Click On "+helper.retrieveText(CategoriesPageLocators04.categoriesPageSideBarCategoryNameLabel)+" Link");
         helper.verifyAcutalAndExpected(
-                ExcelFileHandler.getCellData(Root.prop.getProperty("ExcelPath"), "Sheet1", 10, 1),
+                ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"), "Sheet4", 10, 1),
                 helper.retrieveText(CategoriesPageLocators04.categoriesPageSideBarCategoryNameLabel));
                 helper.performClick(HomePageLocators04.homePageMadeInChinaLogo);
         }
@@ -107,7 +107,7 @@ try{
         helper.performClick(HomePageLocators04.homePageSideBarCategoryConstructionLink);
         LogHelper.info("Click On "+helper.retrieveText(CategoriesPageLocators04.categoriesPageSideBarCategoryNameLabel)+" Link");
         helper.verifyAcutalAndExpected(
-                ExcelFileHandler.getCellData(Root.prop.getProperty("ExcelPath"), "Sheet1", 11, 1),
+                ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"), "Sheet4", 11, 1),
                 helper.retrieveText(CategoriesPageLocators04.categoriesPageSideBarCategoryNameLabel));
                 helper.performClick(HomePageLocators04.homePageMadeInChinaLogo);
       
@@ -117,7 +117,7 @@ try{
         helper.performClick(HomePageLocators04.homePageSideBarCategoryLightIndustryLink);
         LogHelper.info("Click On "+helper.retrieveText(CategoriesPageLocators04.categoriesPageSideBarCategoryNameLabel)+" Link");
         helper.verifyAcutalAndExpected(
-                ExcelFileHandler.getCellData(Root.prop.getProperty("ExcelPath"), "Sheet1", 12, 1),
+                ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"), "Sheet4", 12, 1),
                 helper.retrieveText(CategoriesPageLocators04.categoriesPageSideBarCategoryNameLabel));
                 helper.performClick(HomePageLocators04.homePageMadeInChinaLogo);
        
@@ -127,7 +127,7 @@ try{
         helper.performClick(HomePageLocators04.homePageSideBarCategoryAutoMotorcycleLink);
         LogHelper.info("Click On "+helper.retrieveText(CategoriesPageLocators04.categoriesPageSideBarCategoryNameLabel)+" Link");
         helper.verifyAcutalAndExpected(
-                ExcelFileHandler.getCellData(Root.prop.getProperty("ExcelPath"), "Sheet1", 13, 1),
+                ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"), "Sheet4", 13, 1),
                 helper.retrieveText(CategoriesPageLocators04.categoriesPageSideBarCategoryNameLabel));
                 helper.performClick(HomePageLocators04.homePageMadeInChinaLogo);
         
@@ -137,7 +137,7 @@ try{
         helper.performClick(HomePageLocators04.homePageSideBarCategoryApparelAccessoriesLink);
         LogHelper.info("Click On "+helper.retrieveText(CategoriesPageLocators04.categoriesPageSideBarCategoryNameLabel)+" Link");
         helper.verifyAcutalAndExpected(
-                ExcelFileHandler.getCellData(Root.prop.getProperty("ExcelPath"), "Sheet1", 14, 1),
+                ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"), "Sheet4", 14, 1),
                 helper.retrieveText(CategoriesPageLocators04.categoriesPageSideBarCategoryNameLabel));
                 helper.performClick(HomePageLocators04.homePageMadeInChinaLogo);
        
@@ -147,7 +147,7 @@ try{
         helper.performClick(HomePageLocators04.homePageSideBarCategoryLightsLightingLink);
         LogHelper.info("Click On "+helper.retrieveText(CategoriesPageLocators04.categoriesPageSideBarCategoryNameLabel)+" Link");
         helper.verifyAcutalAndExpected(
-                ExcelFileHandler.getCellData(Root.prop.getProperty("ExcelPath"), "Sheet1", 15, 1),
+                ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"), "Sheet4", 15, 1),
                 helper.retrieveText(CategoriesPageLocators04.categoriesPageSideBarCategoryNameLabel));
                 helper.performClick(HomePageLocators04.homePageMadeInChinaLogo);
         
@@ -157,7 +157,7 @@ try{
         helper.performClick(HomePageLocators04.homePageSideBarCategorySportingGoodsLink);
         LogHelper.info("Click On "+helper.retrieveText(CategoriesPageLocators04.categoriesPageSideBarCategoryNameLabel)+" Link");
         helper.verifyAcutalAndExpected(
-                ExcelFileHandler.getCellData(Root.prop.getProperty("ExcelPath"), "Sheet1", 16, 1),
+                ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"), "Sheet4", 16, 1),
                 helper.retrieveText(CategoriesPageLocators04.categoriesPageSideBarCategoryNameLabel));
                  helper.performClick(HomePageLocators04.homePageMadeInChinaLogo);
        

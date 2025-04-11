@@ -211,6 +211,15 @@ public class HelperUtility {
         JavascriptExecutor js = (JavascriptExecutor)Root.driver;
         js.executeScript("window.scrollBy(0, " + yPixel + ")", "");
     }
+
+     /**
+     * Author: Sushil Lodhi
+     */
+
+     public String getCurrentMethodName(){
+        StackTraceElement[] stackTrace=Thread.currentThread().getStackTrace();
+        return stackTrace[2].getMethodName();
+    }
     
 }
 

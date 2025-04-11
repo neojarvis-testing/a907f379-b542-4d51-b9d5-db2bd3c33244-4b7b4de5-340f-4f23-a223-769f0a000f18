@@ -1,4 +1,7 @@
+
+
 package utils;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -22,7 +25,7 @@ public class Root {
     public static Properties prop;
 
     public void loadProperties() throws IOException {
-        String propertiesPath = System.getProperty("user.dir") + "/config/browser.properties";
+        String propertiesPath = System.getProperty("user.dir") + "/config/config.properties";
         try {
             file = new FileInputStream(propertiesPath);
             prop = new Properties();
@@ -39,11 +42,12 @@ public class Root {
         try {
             loadProperties();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         }
         String executionType = prop.getProperty("executiontype");
         String browserName = prop.getProperty("browser");
+
         if ("remote".equalsIgnoreCase(executionType)) {
             URL gridUrl;
             try {
@@ -81,8 +85,8 @@ public class Root {
         {
             driver.manage().window().maximize();
             driver.get(prop.getProperty("url"));
-            driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+            driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         }
         // Dont remove the listener Object
@@ -93,3 +97,4 @@ public class Root {
     }
 
 }
+ 

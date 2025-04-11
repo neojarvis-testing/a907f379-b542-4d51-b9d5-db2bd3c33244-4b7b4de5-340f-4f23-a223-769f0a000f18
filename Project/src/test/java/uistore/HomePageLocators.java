@@ -10,8 +10,8 @@ public class HomePageLocators {
     public static By homePageLogoLink=By.cssSelector("a[href='//www.made-in-china.com']");
 
     public static By homepagePopUpcloseButton = By.cssSelector("span[class='campaign-pop-close J-campaign-pop-close']");
-    public static By homepageNavbarSignInIcon = By.className(".login-link");
-    public static By homepageNavbarJoinFreeButton = By.xpath("(//a[@class='nailbtn'])[1]");
+     public static By homepageNavbarSignInIcon = By.xpath("//div[@class='login-link']");
+    public static By homepageNavbarJoinFreeButton = By.xpath("(//a[@class='nail-btn'])[1]");
 
     public static By homePageSideBarCategoryManufacturingLink = By
             .xpath("(//span[text()='Manufacturing & Processing Machinery'])[3]");
@@ -34,6 +34,27 @@ public class HomePageLocators {
    public static By homePageBuyerDropdownMenu=By.cssSelector("a[href='https://www.made-in-china.com/help/faq/']");
    public static By homePageBuyerproductDirectory=By.xpath("//a[text()='Product Directory']");
   
-    public static By homePageMadeInChinaLogo = By.className("nail-logo-wrap");
+    public static By homePageMadeInChinaLogo =By.className("nail-logo-wrap");
+
+    public static By homePageLightligthing = By.xpath("(//span[contains(text(),'Lights & Lighting')])[3]");
+    public static By homePageledtube = By
+            .cssSelector("a[href='//www.made-in-china.com/Lights-Lighting-Catalog/LED-Tube.html']");
+
+    public static By menuBarBuyerLink = By.xpath("//a[@href='https://www.made-in-china.com/help/faq/']");
+    public static By menuBarNewUserGuideLink = By.linkText("New User Guide");
+    public static By menuBarAuditedSuppliersLink = By.linkText("Audited Suppliers' Reports");
+    public static By menuBarMeetSuppliersLink = By.linkText("Meet Suppliers");
+    public static By homepagePopup=By.xpath("//span[@class='campaign-pop-close J-campaign-pop-close']");
+    public static By homepageSignIn=By.xpath("//div[@class='login-link']");
+    public static By homepagejoinfree=By.xpath("(//a[@class='nail-btn'])[1]");
+    public static By registerPageEmail=By.cssSelector("div[class='ft-input-wrap']");
+    public static By registerPageEmailinput=By.xpath("//input[@class='ft-input']");
+    public static By registerPageAgree=By.xpath("//span[contains(text(),'I agree to the ')]");
+    public static By homepageBuyer=By.xpath("(//a[contains(text(),'Buyer')])[1]");
+    public static By homepageNewUserGuide=By.xpath("//a[contains(text(),'New User Guide')]");
+    public static By homepageReturnBack=By.xpath("(//a[@href='//www.made-in-china.com/'])[1]");
+    public static By homepageAuditedSuppliersReports=By.xpath("(//a[@href='//www.made-in-china.com/'])[1]");
+    public static By homepageMeetSuppliers=By.xpath("//a[contains(text(),'Meet Suppliers')]");
  
 }
+ 

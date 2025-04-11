@@ -22,6 +22,7 @@ public class ScreenCapture {
         * @return 
         */
        public static String takePageScreenShot(String filename) {
+
      String timestamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
      String name = "/" + filename + timestamp + ".png";
      try {
@@ -40,6 +41,7 @@ public class ScreenCapture {
      }
      return null;
     }
+
 
        
        /**
@@ -76,6 +78,7 @@ public class ScreenCapture {
         * @return
         */
        public static void deleteAllFilesInsideDirectory(String dirPath) {
+
 
         File directory=new File(dirPath);
         if(directory.exists()) {

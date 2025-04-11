@@ -13,3 +13,4 @@ public class SendInqueryPageLocators {
     public static By SendInqueryPageinquiry=By.xpath("(//input[@class='btn btn-main btn-big'])[1]");
     public static By  SendInqueryPagelogo= By.cssSelector("a[href='//www.made-in-china.com/']");
 }
+

@@ -57,3 +57,4 @@ public class HomePageLocators {
     public static By homepageMeetSuppliers=By.xpath("//a[contains(text(),'Meet Suppliers')]");
  
 }
+ 

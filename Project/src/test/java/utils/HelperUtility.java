@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
+
 import java.util.List;
 import java.util.Set;
 
@@ -35,7 +36,6 @@ public class HelperUtility {
             WebElement pageElement = driver.findElement(locator);
             pageElement.click();
         } catch (Exception e) {
-            
             e.printStackTrace();
         }
     }
@@ -56,7 +56,6 @@ public class HelperUtility {
         }
     }
 
-
     /**
      * Author: Krushna Rajkule
      * Description: Retrieves and returns the text content of a WebElement located by the given locator
@@ -72,9 +71,6 @@ public class HelperUtility {
             return " ";
         }
     }
-
-
-
 
     /**
      * Author: Krushna Rajkule
@@ -95,7 +91,6 @@ public class HelperUtility {
      * Description: Simulates mouse hover action over a WebElement located by the
      * given locator using Actions class
      * 
-
      * @param locator
      */
     public void mouseHover(By locator) {
@@ -124,6 +119,7 @@ public class HelperUtility {
       * Author: Krushna Rajkule
       * Description: Switches focus to the child window in a multi-window scenario
       */
+
     public void switchToNewWindow() 
     {
     	String parent = driver.getWindowHandle();
@@ -137,6 +133,7 @@ public class HelperUtility {
     }
 
 
+
     /**
      * Author: Sushil Lodhi
      * @param attributeName
@@ -145,6 +142,7 @@ public class HelperUtility {
         try {
             WebElement element=Root.driver.findElement(locator);
            return element.getDomAttribute(attributeName);
+
         } catch (Exception e) {
             LogHelper.info(e.getMessage());
         }
@@ -157,6 +155,7 @@ public class HelperUtility {
      */
     public void switchToParentWindow()
     {
+
     	String parent = driver.getWindowHandle();
     	Set<String> child=driver.getWindowHandles();
     	for(String id:child) 
@@ -167,6 +166,7 @@ public class HelperUtility {
     		}
     	}
     }
+
 
     public void switchToWindow(int windowIndex) {
         Set<String> handles = driver.getWindowHandles();
@@ -179,13 +179,13 @@ public class HelperUtility {
             count++;
         }
     }
-
     /**
      * Author: Krushna Rajkule
      * Description: Checks and returns whether a WebElement is visible on the page
      * @param pageElement
      * @return
      */
+
     public 	boolean isWebElementElementDisplayed(By locator) {
         try {
             return driver.findElement(locator).isDisplayed();
@@ -193,6 +193,7 @@ public class HelperUtility {
         	return false;
         }
     }
+
 
     /**
      * Author: Sushil Lodhi
@@ -222,4 +223,5 @@ public class HelperUtility {
     }
     
 }
+ 
 

@@ -6,9 +6,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.aventstack.extentreports.ExtentTest;
+
 import uistore.CategoriesPageLocators;
 import utils.ExcelFileHandler;
 import utils.HelperUtility;
+import utils.ReportGenerator;
 import utils.Root;
 
 public class CategoriesPageActions {
@@ -24,7 +27,7 @@ public class CategoriesPageActions {
      }
 
 
-    public void iterateItemsClickAndVerify(){
+    public void iterateItemsClickAndVerify(ExtentTest test){
             List<WebElement> elements=helper.getElementsByXPath(CategoriesPageLocators.commonLocator);
             for(int i=1;i<=9;i++){
                 WebElement element=Root.driver.findElement(By.xpath("(//a[@class='item-anchor'])["+i+"]"));
@@ -35,6 +38,8 @@ public class CategoriesPageActions {
                 Root.driver.close();
                 helper.switchToWindow(1);
             }
+            ReportGenerator.addScreenshotToReport("agricultural_machinery",test,"agricultural_machinery");
+
             
     }
 

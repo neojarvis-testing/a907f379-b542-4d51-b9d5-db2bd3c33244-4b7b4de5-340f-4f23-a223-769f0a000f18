@@ -5,8 +5,8 @@ import org.openqa.selenium.WebDriver;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
-import uistore.HomePageLocatorsTM02;
-import uistore.SearchResultPageLocatorsTM02;
+import uistore.HomePageLocators;
+import uistore.SearchResultPageLocators;
 import utils.ExcelFileHandler;
 import utils.HelperUtility;
 import utils.LogHelper;
@@ -15,12 +15,12 @@ import utils.Root;
 import utils.ScreenCapture;
 import utils.WaitFor;
 
-public class SearchResultPageActionsTM02 {
+public class SearchResultPageActions {
     WebDriver driver;
     HelperUtility helper;
     WaitFor waitFor = new WaitFor();
 
-    public SearchResultPageActionsTM02(WebDriver driver) {
+    public SearchResultPageActions(WebDriver driver) {
         this.driver = driver;
         this.helper = new HelperUtility(Root.driver);
     }
@@ -37,7 +37,7 @@ public class SearchResultPageActionsTM02 {
     }
 
     public void verifyWiresSearchResults(ExtentTest test) {
-        String actualText = helper.retrieveText(SearchResultPageLocatorsTM02.searchResultPageWiresText);
+        String actualText = helper.retrieveText(SearchResultPageLocators.searchResultPageWiresText);
         String expectedText = "Wires";
 
         helper.verifyAcutalAndExpected(expectedText, actualText);
@@ -56,7 +56,7 @@ public class SearchResultPageActionsTM02 {
             helper.scrollOnPage(1000);
             // Thread.sleep(3000);
 
-            helper.isWebElementElementDisplayed(SearchResultPageLocatorsTM02.searchResultPageWiresPagination);
+            helper.isWebElementElementDisplayed(SearchResultPageLocators.searchResultPageWiresPagination);
             ScreenCapture.takePageScreenShot("WiresResultPagePagination");
             ReportGenerator.addScreenshotToReport("WiresResultPagePagination", test,
                     "Pagination for Wires search result page");
@@ -76,9 +76,9 @@ public class SearchResultPageActionsTM02 {
 
             helper.scrollOnPage(-3000);
             // Thread.sleep(2000);
-            helper.performClick(SearchResultPageLocatorsTM02.searchResultPageWiresFirstProduct);
+            helper.performClick(SearchResultPageLocators.searchResultPageWiresFirstProduct);
             String wiresFirstProductText = helper
-                    .retrieveText(SearchResultPageLocatorsTM02.searchResultPageWiresFirstProduct);
+                    .retrieveText(SearchResultPageLocators.searchResultPageWiresFirstProduct);
             Thread.sleep(2000);
 
             ScreenCapture.takePageScreenShot("WiresResultFirstProduct");
@@ -101,10 +101,10 @@ public class SearchResultPageActionsTM02 {
             String searchValue = ExcelFileHandler.getCellData(excelSheetPath, "Sheet2", 2, 0);
             // System.out.println(searchValue);
 
-            helper.performClick(HomePageLocatorsTM02.homePageSearchBar);
-            Root.driver.findElement(HomePageLocatorsTM02.homePageSearchBar).clear();
-            helper.enterText(HomePageLocatorsTM02.homePageSearchBar, searchValue);
-            helper.performEnter(HomePageLocatorsTM02.homePageSearchBar);
+            helper.performClick(HomePageLocators.homePageSearchBar);
+            Root.driver.findElement(HomePageLocators.homePageSearchBar).clear();
+            helper.enterText(HomePageLocators.homePageSearchBar, searchValue);
+            helper.performEnter(HomePageLocators.homePageSearchBar);
 
             LogHelper.info("click on search bar");
             LogHelper.info(searchValue + "enterd in search bar");
@@ -120,7 +120,7 @@ public class SearchResultPageActionsTM02 {
     }
 
     public void verifyFurnitureSearchResults(ExtentTest test) {
-        String actualText = helper.retrieveText(SearchResultPageLocatorsTM02.searchResultPageFurnitureText);
+        String actualText = helper.retrieveText(SearchResultPageLocators.searchResultPageFurnitureText);
         String expectedText = "Furniture";
 
         helper.verifyAcutalAndExpected(expectedText, actualText);
@@ -130,8 +130,8 @@ public class SearchResultPageActionsTM02 {
     }
 
     public void clickMoreLinkAndVerify(ExtentTest test) {
-        helper.performClick(SearchResultPageLocatorsTM02.searchResultPageFurnitureMoreLink);
-        String moreLinkText = helper.retrieveText(SearchResultPageLocatorsTM02.searchResultPageFurnitureMoreLink);
+        helper.performClick(SearchResultPageLocators.searchResultPageFurnitureMoreLink);
+        String moreLinkText = helper.retrieveText(SearchResultPageLocators.searchResultPageFurnitureMoreLink);
 
         LogHelper.info("click on " + moreLinkText);
         test.log(Status.INFO, "click on " + moreLinkText);
@@ -142,9 +142,9 @@ public class SearchResultPageActionsTM02 {
         try {
             helper.scrollOnPage(3000);
             // Thread.sleep(2000);
-            helper.performClick(SearchResultPageLocatorsTM02.searchResultPageFurniturePaginationPage2Link);
+            helper.performClick(SearchResultPageLocators.searchResultPageFurniturePaginationPage2Link);
             String paginationPage2LinkText = helper
-                    .retrieveText(SearchResultPageLocatorsTM02.searchResultPageFurniturePaginationPage2Link);
+                    .retrieveText(SearchResultPageLocators.searchResultPageFurniturePaginationPage2Link);
 
             LogHelper.info("click on " + paginationPage2LinkText);
             test.log(Status.INFO, "click on " + paginationPage2LinkText);
@@ -155,7 +155,7 @@ public class SearchResultPageActionsTM02 {
     }
 
     public void goToHomePage(ExtentTest test) {
-        helper.performClick(HomePageLocatorsTM02.homePageLogo);
+        helper.performClick(HomePageLocators.homePageLogo);
         LogHelper.info("click on home page logo");
         test.log(Status.INFO, "click on home page logo");
     }

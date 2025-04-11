@@ -1,6 +1,5 @@
 package utils;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -10,13 +9,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
+
 import java.util.List;
 import java.util.Set;
 
 
 public class HelperUtility {
 
-	private WebDriver driver;
+ private WebDriver driver;
 
     public HelperUtility(WebDriver driver) 
     {
@@ -36,7 +36,6 @@ public class HelperUtility {
             WebElement pageElement = driver.findElement(locator);
             pageElement.click();
         } catch (Exception e) {
-            
             e.printStackTrace();
         }
     }
@@ -47,12 +46,12 @@ public class HelperUtility {
  * @param locator
  * @param data
  */
+
     public void enterText(By locator, String data) {
         try {
             WebElement pageElement = driver.findElement(locator);
             pageElement.sendKeys(data);
         } catch (Exception e) {
-            
             e.printStackTrace();
         }
     }
@@ -68,7 +67,6 @@ public class HelperUtility {
             WebElement pageElement = driver.findElement(locator);
             return pageElement.getText();
         } catch (Exception e) {
-            
             e.printStackTrace();
             return " ";
         }
@@ -84,14 +82,15 @@ public class HelperUtility {
             WebElement pageElement = driver.findElement(locator);
             pageElement.sendKeys(Keys.ENTER);
         } catch (Exception e) {
-            
             e.printStackTrace();
         }
     }
 
     /**
      * Author: Krushna Rajkule
-     * Description: Simulates mouse hover action over a WebElement located by the given locator using Actions class
+     * Description: Simulates mouse hover action over a WebElement located by the
+     * given locator using Actions class
+     * 
      * @param locator
      */
     public void mouseHover(By locator) {
@@ -100,10 +99,11 @@ public class HelperUtility {
             Actions actions = new Actions(driver);
             actions.moveToElement(pageElement).perform();
         } catch (Exception e) {
-            
+
             e.printStackTrace();
         }
     }
+
 
     /**
      * Author: Krushna Rajkule
@@ -115,61 +115,89 @@ public class HelperUtility {
         return driver.findElements(locator);
     }
 
-
-
      /**
       * Author: Krushna Rajkule
       * Description: Switches focus to the child window in a multi-window scenario
       */
+
     public void switchToNewWindow() 
     {
-    	String parent = driver.getWindowHandle();
-    	Set<String> child=driver.getWindowHandles();
-    	
-    	for(String id:child) {
-    		if(!parent.equals(id)) 
-    		{
-    			driver.switchTo().window(id);
-    		}
-    	}
+     String parent = driver.getWindowHandle();
+     Set<String> child=driver.getWindowHandles();
+     for(String id:child) {
+      if(!parent.equals(id)) 
+      {
+       driver.switchTo().window(id);
+      }
+     }
     }
-    
+
+
+
+    /**
+     * Author: Sushil Lodhi
+     * @param attributeName
+     */
+    public String retrieveDomAttribute(By locator,String attributeName){
+        try {
+            WebElement element=Root.driver.findElement(locator);
+           return element.getDomAttribute(attributeName);
+
+        } catch (Exception e) {
+            LogHelper.info(e.getMessage());
+        }
+        return null;
+    }
+
     /**
      * Author: Krushna Rajkule
      * Description: Switches focus back to the parent window in a multi-window scenario
      */
     public void switchToParentWindow()
     {
-    	String parent = driver.getWindowHandle();
-    	Set<String> child=driver.getWindowHandles();
-    	for(String id:child) 
-    	{
-    		if(parent.equals(id)) 
-    		{
-    			driver.switchTo().window(parent);
-    		}
-    	}
-    	
+
+     String parent = driver.getWindowHandle();
+     Set<String> child=driver.getWindowHandles();
+     for(String id:child) 
+     {
+      if(parent.equals(id)) 
+      {
+       driver.switchTo().window(parent);
+      }
+     }
     }
-    
-    
-   
+
+
+    public void switchToWindow(int windowIndex) {
+        Set<String> handles = driver.getWindowHandles();
+        int count = 0;
+        for (String handle : handles) {
+            if (count == windowIndex) {
+                driver.switchTo().window(handle);
+                break;
+            }
+            count++;
+        }
+    }
     /**
      * Author: Krushna Rajkule
      * Description: Checks and returns whether a WebElement is visible on the page
      * @param pageElement
      * @return
      */
-    public 	boolean isWebElementDisplayed(By locator) {
+
+    public  boolean isWebElementElementDisplayed(By locator) {
         try {
-            WebElement pageElement=driver.findElement(locator);
-            return pageElement.isDisplayed();
-           
+            return driver.findElement(locator).isDisplayed();
         } catch (NoSuchElementException e) {
-        	return false;
+         return false;
         }
     }
 
+
+    /**
+     * Author: Sushil Lodhi
+     */
     public void verifyAcutalAndExpected(String expected, String actual){
         try{
         if(actual.contains(expected)){
@@ -184,9 +212,17 @@ public class HelperUtility {
         JavascriptExecutor js = (JavascriptExecutor)Root.driver;
         js.executeScript("window.scrollBy(0, " + yPixel + ")", "");
     }
+
+     /**
+     * Author: Sushil Lodhi
+     */
+
+     public String getCurrentMethodName(){
+        StackTraceElement[] stackTrace=Thread.currentThread().getStackTrace();
+        return stackTrace[2].getMethodName();
+    }
     
 }
+ 
 
-	
-
-
+ 

@@ -1,5 +1,6 @@
 package utils;
 
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -106,6 +107,8 @@ public class ReportGenerator extends Root {
         return destPath;
     }
  
+
+
     public static void addScreenshotToReport(String filename, ExtentTest test, String description) {
         try {
             test.log(Status.INFO, description, MediaEntityBuilder.createScreenCaptureFromPath(captureScreenShot(filename)).build());
@@ -116,5 +119,6 @@ public class ReportGenerator extends Root {
    
     }
  
+
 } 
 

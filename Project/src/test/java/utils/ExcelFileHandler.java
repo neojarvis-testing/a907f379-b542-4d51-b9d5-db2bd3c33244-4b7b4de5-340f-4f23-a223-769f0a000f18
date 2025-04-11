@@ -19,13 +19,12 @@ public class ExcelFileHandler {
      */
     public static String getCellData(String excelPath,String sheetName,int rowNumber,int cellNumber){
         try{
-        FileInputStream file=new FileInputStream(excelPath);   //testdata/data.xlsx"
+        FileInputStream file=new FileInputStream(excelPath);
         workbook=new XSSFWorkbook(file);
         XSSFSheet sheet=workbook.getSheet(sheetName);
         XSSFRow row=sheet.getRow(rowNumber);
         XSSFCell cell=row.getCell(cellNumber);
         return cell.toString();
-        //close workbook inside AfterClass
     }
         catch (Exception e) {
             e.printStackTrace();

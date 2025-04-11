@@ -17,12 +17,12 @@ public class ReportGenerator {
 	
 	public static ExtentReports generateExtentReport(String reportName) {
 
+
         if (extentReport == null) {
             extentReport = createExtentReport(reportName);
         }
         return extentReport;
     }
-
 
 	
 	private static ExtentReports createExtentReport(String reportName) {

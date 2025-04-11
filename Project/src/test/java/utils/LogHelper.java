@@ -16,6 +16,7 @@ public class LogHelper {
     public static void debug(String message) {
         logger.debug(message);
     }
+
     /**
      * Author: Bharani
      * Description: INFO status in log
@@ -24,6 +25,7 @@ public class LogHelper {
     public static void info(String message) {
         logger.info(message);
     }
+
     /**
      * Author: Bharani
      * Description: ERROR status in log
@@ -42,6 +44,6 @@ public class LogHelper {
         logger.trace(message);
     }
    
- 
+
 }
 

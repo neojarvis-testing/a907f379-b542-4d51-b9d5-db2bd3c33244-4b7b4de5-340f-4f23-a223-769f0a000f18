@@ -18,6 +18,7 @@ public class ScreenCapture {
         * Description: captures screenshot of whole webPage
         * @param filename
 
+
         * @return 
         */
        public static String takePageScreenShot(String filename) {
@@ -39,11 +40,13 @@ public class ScreenCapture {
    		}
    		return null;
    	}
+
        
        /**
         * Author: Suhansh Bagre
         * Description: captures screenshot of a particular element of a webPage
         * @param filename
+
 
         * @return 
         */
@@ -73,6 +76,7 @@ public class ScreenCapture {
         * @return
         */
        public static void deleteAllFilesInsideDirectory(String dirPath) {
+
     	   File directory=new File(dirPath);
     	   if(directory.exists()) {
     		   File[] files=directory.listFiles();
@@ -86,3 +90,4 @@ public class ScreenCapture {
     	   }
        }
 }
+

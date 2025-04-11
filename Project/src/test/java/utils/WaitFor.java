@@ -20,3 +20,4 @@ public class WaitFor {
 		wait.until(ExpectedConditions.urlToBe(url));
 	}
 }
+

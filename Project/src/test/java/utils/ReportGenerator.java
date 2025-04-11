@@ -1,19 +1,10 @@
 package utils;
 
-
-
-
-
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-
-
-
 
 import java.util.Properties;
 import java.util.TimeZone;
@@ -21,18 +12,12 @@ import java.util.TimeZone;
 import com.google.common.io.Files;
  
 
-
-
-
-
  
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-
-
 
  
  
@@ -54,10 +39,6 @@ public class ReportGenerator extends Root {
         }
         return extentReport;
     }
-
-
-
-
 
  
     private static ExtentReports createReport(String reportName) {
@@ -86,10 +67,6 @@ public class ReportGenerator extends Root {
         reportFilePath += reportName + "_" + timestamp + ".html";
  
 
-
-
-
-
         File extentReportFile = new File(reportFilePath);
  
         ExtentSparkReporter sparkReporter = new ExtentSparkReporter(extentReportFile);
@@ -100,8 +77,6 @@ public class ReportGenerator extends Root {
  
  
         return extentReport;
-
-
 
     }
  
@@ -132,11 +107,6 @@ public class ReportGenerator extends Root {
     }
  
 
-
-
-
-
-
     public static void addScreenshotToReport(String filename, ExtentTest test, String description) {
         try {
             test.log(Status.INFO, description, MediaEntityBuilder.createScreenCaptureFromPath(captureScreenShot(filename)).build());
@@ -150,7 +120,9 @@ public class ReportGenerator extends Root {
 
 
 
+
 } 
+
 
 
 

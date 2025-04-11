@@ -18,4 +18,4 @@ public class SearchResultPageLocators {
         public static By searchResultPageFurnitureLinks = By.xpath("//div[@class='J-tags']//a");
         public static By searchResultPageFurniturePaginationPage2Link = By.linkText("2");
 }
- 
+

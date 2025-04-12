@@ -19,3 +19,4 @@ public class SignInPageLocators {
     public static By signInPageJapaneseLink = By.xpath("(//a[contains(text(),'日本語')])[1]");
     public static By signInPageEnglishLink = By.xpath("(//a[contains(text(),'English')])[1]");
 }
+ 

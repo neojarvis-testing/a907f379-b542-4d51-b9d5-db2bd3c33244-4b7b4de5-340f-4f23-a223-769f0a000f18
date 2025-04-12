@@ -30,3 +30,4 @@ public class ProductsPageLocators {
     public static By ProductsPageColourtemp = By.xpath("//span[contains(text(),'Color Temperature')]");
     public static By ProductsPagewarmligth = By.xpath("//a[contains(text(),'Warm White')]");
 }
+ 

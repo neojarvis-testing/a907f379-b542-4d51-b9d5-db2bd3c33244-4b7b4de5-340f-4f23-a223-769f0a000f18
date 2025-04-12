@@ -7,6 +7,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitFor {
 
+
+
  static WebDriverWait wait=new WebDriverWait(Root.driver, Duration.ofSeconds(20));
  
  public static void waitForElemetToBeClickable(By elementLocator) {
@@ -21,6 +23,8 @@ public class WaitFor {
   wait.until(ExpectedConditions.urlToBe(url));
  }
 
+
 }
+
 
 

@@ -19,3 +19,5 @@ public class SearchResultPageLocators {
         public static By searchResultPageFurniturePaginationPage2Link = By.linkText("2");
 }
 
+
+

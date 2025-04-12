@@ -19,6 +19,8 @@ public class HelperUtility {
  private WebDriver driver;
 
 
+
+
     public HelperUtility(WebDriver driver) 
     {
         this.driver = driver;
@@ -158,6 +160,8 @@ public class HelperUtility {
     {
 
 
+
+
      String parent = driver.getWindowHandle();
      Set<String> child=driver.getWindowHandles();
      for(String id:child) 
@@ -167,6 +171,8 @@ public class HelperUtility {
        driver.switchTo().window(parent);
       }
      }
+
+
 
     }
 
@@ -190,7 +196,9 @@ public class HelperUtility {
      */
 
 
+
     public  boolean isWebElementElementDisplayed(By locator) {
+
 
         try {
             return driver.findElement(locator).isDisplayed();
@@ -219,6 +227,8 @@ public class HelperUtility {
     }
 
 
+
+
      /**
      * Author: Sushil Lodhi
      */
@@ -229,6 +239,8 @@ public class HelperUtility {
     }
     
 }
+
+
 
  
 

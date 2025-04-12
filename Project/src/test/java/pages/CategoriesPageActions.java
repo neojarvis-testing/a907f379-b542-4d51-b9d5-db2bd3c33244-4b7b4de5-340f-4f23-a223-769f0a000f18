@@ -29,11 +29,14 @@ public class CategoriesPageActions {
 
     public void iterateItemsClickAndVerify(ExtentTest test){
             List<WebElement> elements=helper.getElementsByXPath(CategoriesPageLocators.commonLocator);
+
             for(int i=1;i<=9;i++){
+
                 WebElement element=Root.driver.findElement(By.xpath("(//a[@class='item-anchor'])["+i+"]"));
                 element.click();
                 //upto here it is working
                 helper.switchToWindow(2);
+
                 helper.verifyAcutalAndExpected(ExcelFileHandler.getCellData(Root.prop.getProperty("excelpath"), "Sheet1", i, 3),Root.driver.getCurrentUrl());
                 Root.driver.close();
                 helper.switchToWindow(1);
@@ -43,5 +46,7 @@ public class CategoriesPageActions {
             
     }
 
+
 }
  
+

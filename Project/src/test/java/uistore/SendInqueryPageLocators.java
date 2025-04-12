@@ -14,3 +14,5 @@ public class SendInqueryPageLocators {
     public static By  SendInqueryPagelogo= By.cssSelector("a[href='//www.made-in-china.com/']");
 }
 
+
+

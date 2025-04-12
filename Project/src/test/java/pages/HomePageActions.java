@@ -298,6 +298,10 @@ public void RegisterSignIn(ExtentTest test) {
 
     }
 
+
+
+
+
     
     public void navigateBack(ExtentTest test){
         helper.mouseHover(HomePageLocators.homepageBuyer);

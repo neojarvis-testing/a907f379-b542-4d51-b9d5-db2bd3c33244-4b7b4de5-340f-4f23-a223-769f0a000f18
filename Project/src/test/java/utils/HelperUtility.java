@@ -16,7 +16,10 @@ import java.util.Set;
 
 public class HelperUtility {
 
-	private WebDriver driver;
+ private WebDriver driver;
+
+
+
 
     public HelperUtility(WebDriver driver) 
     {
@@ -122,14 +125,14 @@ public class HelperUtility {
 
     public void switchToNewWindow() 
     {
-    	String parent = driver.getWindowHandle();
-    	Set<String> child=driver.getWindowHandles();
-    	for(String id:child) {
-    		if(!parent.equals(id)) 
-    		{
-    			driver.switchTo().window(id);
-    		}
-    	}
+     String parent = driver.getWindowHandle();
+     Set<String> child=driver.getWindowHandles();
+     for(String id:child) {
+      if(!parent.equals(id)) 
+      {
+       driver.switchTo().window(id);
+      }
+     }
     }
 
 
@@ -156,15 +159,21 @@ public class HelperUtility {
     public void switchToParentWindow()
     {
 
-    	String parent = driver.getWindowHandle();
-    	Set<String> child=driver.getWindowHandles();
-    	for(String id:child) 
-    	{
-    		if(parent.equals(id)) 
-    		{
-    			driver.switchTo().window(parent);
-    		}
-    	}
+
+
+
+     String parent = driver.getWindowHandle();
+     Set<String> child=driver.getWindowHandles();
+     for(String id:child) 
+     {
+      if(parent.equals(id)) 
+      {
+       driver.switchTo().window(parent);
+      }
+     }
+
+
+
     }
 
 
@@ -186,11 +195,15 @@ public class HelperUtility {
      * @return
      */
 
-    public 	boolean isWebElementElementDisplayed(By locator) {
+
+
+    public  boolean isWebElementElementDisplayed(By locator) {
+
+
         try {
             return driver.findElement(locator).isDisplayed();
         } catch (NoSuchElementException e) {
-        	return false;
+         return false;
         }
     }
 
@@ -213,6 +226,9 @@ public class HelperUtility {
         js.executeScript("window.scrollBy(0, " + yPixel + ")", "");
     }
 
+
+
+
      /**
      * Author: Sushil Lodhi
      */
@@ -223,5 +239,9 @@ public class HelperUtility {
     }
     
 }
+
+
+
  
 
+ 
